@@ -8,12 +8,12 @@ import { MessageCircle, MapPin } from "lucide-react";
 const replacementImage = "https://5.imimg.com/data5/FH/RD/TP/ANDROID-15813856/product-jpeg.jpg";
 
 const services = [
-  { title: "Bridal Makeup", desc: "Stunning bridal looks for your special day", img: replacementImage },
+  { title: "Bridal Makeup", desc: "Stunning bridal looks for your special day", img: "https://i.pinimg.com/736x/55/cc/94/55cc9455d35d6a916f468a79b0303593.jpg" },
   { title: "Party Makeup", desc: "Glamorous looks for every celebration", img: replacementImage },
-  { title: "Haircut & Styling", desc: "Trendy cuts and styles for all", img: replacementImage },
-  { title: "Facial & Cleanup", desc: "Rejuvenating skin care treatments", img: replacementImage },
-  { title: "Hair Spa", desc: "Deep nourishment for healthy hair", img: replacementImage },
-  { title: "Nail Art", desc: "Beautiful manicure and nail designs", img: replacementImage },
+  { title: "Haircut & Styling", desc: "Trendy cuts and styles for all", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMg6gQtvgz-glc8MsuW9AKRHjuUzUWxFfD9w&s" },
+  { title: "Facial & Cleanup", desc: "Rejuvenating skin care treatments", img: "https://skinkraft.com/cdn/shop/articles/Facial-Versus-Clean-up_1024x1024.jpg?v=1593155930" },
+  { title: "Hair Spa", desc: "Deep nourishment for healthy hair", img: "https://www.snip.co.in/wp-content/uploads/2025/10/is-hair-spa-good-2.webp" },
+  { title: "Nail Art", desc: "Beautiful manicure and nail designs", img: "https://i-media.vyaparify.com/vcards/services/59196/desktop-wallpaper-nails-art-2.jpg" },
 ];
 
 const testimonials = [
@@ -50,11 +50,17 @@ const Index = () => (
 
     {/* Hero */}
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background blush blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl opacity-40" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-30" />
+      {/* Full Cover Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://media.istockphoto.com/id/1856117770/photo/modern-beauty-salon.jpg?s=612x612&w=0&k=20&c=dVZtsePk2pgbqDXwVkMm-yIw5imnZ2rnkAruR7zf8EA="
+          alt="Meena's Beauty Unisex Salon — luxury salon interior in Jaipur"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-charcoal/65" />
+      </div>
 
-      <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16">
+      <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16 relative z-10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,30 +68,30 @@ const Index = () => (
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col items-center"
           >
-            <span className="font-script text-3xl text-gold block mb-3">Welcome to</span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal leading-tight mb-6">
+            <span className="font-script text-3xl md:text-4xl text-gold block mb-3 drop-shadow-md">Welcome to</span>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
               Your Trusted Beauty & Hair Salon in Jaipur
             </h1>
-            <p className="text-muted-foreground font-body text-lg leading-relaxed mb-8 max-w-lg">
+            <p className="text-white/90 font-body text-lg md:text-xl leading-relaxed mb-8 max-w-2xl drop-shadow-md">
               Bridal makeup, facials, hair spa, waxing, and complete grooming services — all in one place.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-5">
               <a
                 href="https://wa.me/919413373335"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-body rounded-full hover:bg-rose transition-all duration-300 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-body rounded-full hover:bg-rose transition-all duration-300 hover:shadow-xl text-lg font-medium"
               >
-                <MessageCircle size={18} />
+                <MessageCircle size={20} />
                 Book on WhatsApp
               </a>
               <a
                 href="https://maps.google.com/?q=Meena's+Beauty+Unisex+Salon+Jaipur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-gold text-charcoal font-body rounded-full hover:bg-gold hover:text-primary-foreground transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-gold text-white font-body rounded-full hover:bg-gold hover:text-primary-foreground hover:border-gold transition-all duration-300 text-lg font-medium shadow-md"
               >
-                <MapPin size={18} />
+                <MapPin size={20} />
                 Get Directions
               </a>
             </div>
